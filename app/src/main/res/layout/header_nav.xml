@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="167dp"
+    android:background="?attr/colorOnPrimary">
+
+    <LinearLayout
+        android:id="@+id/layout_green"
+        android:orientation="vertical"
+        android:background="?attr/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"/>
+
+    <LinearLayout
+        android:paddingTop="40dp"
+        android:orientation="vertical"
+        android:layout_below="@id/layout_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:paddingStart="104dp"
+            android:paddingEnd="0dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Name Of User"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
