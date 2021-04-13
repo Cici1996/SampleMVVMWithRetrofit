@@ -11,16 +11,17 @@ class ViewModelProviderFactory(
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(NewsViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(NewsViewModel::class.java))
             return NewsViewModel(app, appRepository) as T
-        }
-        if (modelClass.isAssignableFrom(MovieViewModel::class.java)) {
-            return MovieViewModel(app, appRepository) as T
-        }
 
-        if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(MovieViewModel::class.java))
+            return MovieViewModel(app, appRepository) as T
+
+        if (modelClass.isAssignableFrom(UserViewModel::class.java))
             return UserViewModel(app, appRepository) as T
-        }
+
+        if (modelClass.isAssignableFrom(MoviePagingViewModel::class.java))
+            return MoviePagingViewModel(app, appRepository) as T
 
         throw IllegalArgumentException("Unknown class name")
     }

@@ -4,9 +4,9 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
 
-    <string name="gosokberhadiah">Gosok Berhadiah</string>
-    <string name="datadiri">Data Diri</string>
-    <string name="transaksi">Transaksi</string>
+    <string name="gosokberhadiah">Recyleview</string>
+    <string name="datadiri">Post Data</string>
+    <string name="transaksi">Recyleview with paging</string>
     <string name="notifikasi">Notifikasi</string>
     <string name="keluar">Keluar</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -14,4 +14,5 @@
     <string name="no_internet">No Internet</string>
     <string name="network_failure">Network Failure</string>
     <string name="conversion_error">conversion_error</string>
+    <string name="txtnotification">Notification</string>
 </resources>

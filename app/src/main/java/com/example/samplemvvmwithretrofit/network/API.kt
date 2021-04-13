@@ -1,9 +1,6 @@
 package com.example.samplemvvmwithretrofit.network
 
-import com.example.samplemvvmwithretrofit.model.BaseItem
-import com.example.samplemvvmwithretrofit.model.BaseMovieResponse
-import com.example.samplemvvmwithretrofit.model.DataUserRequest
-import com.example.samplemvvmwithretrofit.model.DataUserResponse
+import com.example.samplemvvmwithretrofit.model.*
 import com.example.samplemvvmwithretrofit.utils.Constants.TMDB_API_KEY
 import retrofit2.Response
 import retrofit2.http.Body
@@ -19,6 +16,11 @@ interface API {
     suspend fun getMoviesToprated(
         @Query("page") page:Int
     ): Response<BaseMovieResponse>
+
+    @GET("movie/upcoming?api_key="+TMDB_API_KEY+"&language=en-US")
+    suspend fun getMoviesTopratedOther(
+        @Query("page") page:Int
+    ): Response<BaseMovieResponseOther>
 
     @POST("users")
     suspend fun saveUser(

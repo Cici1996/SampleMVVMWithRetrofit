@@ -1,6 +1,7 @@
 package com.example.samplemvvmwithretrofit.ui
 
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -9,6 +10,8 @@ import androidx.core.view.GravityCompat
 import com.example.samplemvvmwithretrofit.R
 import com.example.samplemvvmwithretrofit.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.app_bar_main.*
+
 
 class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener  {
 
@@ -24,6 +27,7 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     }
 
     private fun init() {
+        setSupportActionBar(toolbar_main)
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -37,16 +41,25 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_toolbar, menu)
+        return true
+    }
+
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+
         when (menuItem.itemId) {
             R.id.gosokberhadiahmenu -> {
                 supportFragmentManager.beginTransaction().replace(R.id.content_frame, GosoFragment()).commit()
+                toolbar_main.title = "Basic Recyleview"
             }
             R.id.datadirimenu -> {
+                toolbar_main.title = "Basic Form"
                 supportFragmentManager.beginTransaction().replace(R.id.content_frame, FormUserFragment()).commit()
             }
             R.id.transaksimenu -> {
-                Toast.makeText(this, "Newsletter", Toast.LENGTH_SHORT).show()
+                toolbar_main.title = "Basic Recyleview With Paging"
+                supportFragmentManager.beginTransaction().replace(R.id.content_frame, RecyleviewPagingFragment()).commit()
             }
             R.id.notifikasimenu -> {
                 Toast.makeText(this, "Newsletter", Toast.LENGTH_SHORT).show()
@@ -59,9 +72,16 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         return true
     }
 
-    override fun onOptionsItemSelected(item:MenuItem):Boolean {
+    override fun onOptionsItemSelected(item: MenuItem):Boolean {
         if (mToggle.onOptionsItemSelected(item)) {
             return true;
+        }
+
+        val id = item.itemId
+
+        if (id == R.id.notification_settings) {
+            Toast.makeText(this, "Notifikasi Item Clicked", Toast.LENGTH_LONG).show()
+            return true
         }
 
         return super.onOptionsItemSelected(item);

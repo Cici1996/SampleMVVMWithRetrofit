@@ -2,17 +2,49 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="?attr/colorPrimary"
+    android:background="@color/background_secondary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.SplashActivity">
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="194.16dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/icon_snapchat"
+        android:paddingStart="20dp"
+        android:paddingTop="24dp"
+        android:src="@drawable/main_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:src="@drawable/scratch_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:paddingTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+        <ProgressBar
+            android:indeterminateTint="@color/blue"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/grass"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:icon="@drawable/ic_gift"
-        android:id="@+id/gosokberhadiahmenu"
-        android:title="@string/gosokberhadiah" />
-    <item
-        android:icon="@drawable/ic_account"
-        android:id="@+id/datadirimenu"
-        android:title="@string/datadiri" />
-    <item
-        android:icon="@drawable/ic_transaksi"
-        android:id="@+id/transaksimenu"
-        android:title="@string/transaksi" />
-    <item
-        android:icon="@drawable/ic_notifikasi"
-        android:id="@+id/notifikasimenu"
-        android:title="@string/notifikasi" />
-    <item
-        android:icon="@drawable/ic_logout"
-        android:id="@+id/keluarmenu"
-        android:title="@string/keluar" />
+<menu
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_gift"
+            android:id="@+id/gosokberhadiahmenu"
+            android:title="@string/gosokberhadiah" />
+        <item
+            android:icon="@drawable/ic_account"
+            android:id="@+id/datadirimenu"
+            android:title="@string/datadiri" />
+        <item
+            android:icon="@drawable/ic_transaksi"
+            android:id="@+id/transaksimenu"
+            android:title="@string/transaksi" />
+        <item
+            android:icon="@drawable/ic_notifikasi"
+            android:id="@+id/notifikasimenu"
+            android:title="@string/notifikasi" />
+        <item
+            android:icon="@drawable/ic_logout"
+            android:id="@+id/keluarmenu"
+            android:title="@string/keluar" />
+    </group>
 </menu>

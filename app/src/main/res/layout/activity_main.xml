@@ -8,23 +8,37 @@
     android:id="@+id/drawer_layout"
     tools:context=".ui.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/content_frame"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/app_bar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:layout_below="@+id/include"
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+
+    </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         android:layout_gravity="start"
         app:headerLayout="@layout/header_nav"
-        app:menu="@menu/menu_nav">
-        <LinearLayout
-            android:background="?attr/colorPrimary"
-            android:layout_gravity="bottom"
-            android:layout_width="match_parent"
-            android:layout_height="24dp"/>
-    </com.google.android.material.navigation.NavigationView>
+        app:menu="@menu/menu_nav"/>
+<!--    <ImageView-->
+<!--        android:scaleType="fitXY"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        android:src="@drawable/grass"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
 </androidx.drawerlayout.widget.DrawerLayout>

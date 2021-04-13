@@ -8,5 +8,7 @@ class AppRepository {
 
     suspend fun getMoviesTopRated(page:Int) = RetrofitInstance.tmdbApi.getMoviesToprated(page)
 
+    suspend fun getMoviesTopRatedOther(page:Int) = RetrofitInstance.tmdbApi.getMoviesTopratedOther(page)
+
     suspend fun login(dataLogin:DataUserRequest) = RetrofitInstance.reqresApi.saveUser(dataLogin)
 }
