@@ -62,7 +62,8 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
                 supportFragmentManager.beginTransaction().replace(R.id.content_frame, RecyleviewPagingFragment()).commit()
             }
             R.id.notifikasimenu -> {
-                Toast.makeText(this, "Newsletter", Toast.LENGTH_SHORT).show()
+                toolbar_main.title = "Sample OTP"
+                supportFragmentManager.beginTransaction().replace(R.id.content_frame, OtpViewFragment()).commit()
             }
             R.id.keluarmenu -> {
                 Toast.makeText(this, "Newsletter", Toast.LENGTH_SHORT).show()
